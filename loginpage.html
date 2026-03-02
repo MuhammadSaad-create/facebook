@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Facebook – log in</title>
+  <style>
+    :root{
+      --blue:#0064E0;
+      --focus:#1877F2;
+      --text:#1c1e21;
+      --muted:#8a8d91;
+      --line:#d0d5dd;
+      --field:#ffffff;
+      --bg:#ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text);
+    }
+
+    /* Page layout */
+    .page{
+      min-height:100%;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:110px 16px 40px;
+    }
+
+    /* Form block */
+    .panel{
+      width:min(804px, 100%);
+    }
+
+    .title{
+      font-size:28px;
+      font-weight:600;
+      margin:0 0 18px 0;
+      letter-spacing:0.2px;
+    }
+
+    .field-wrap{
+      border-radius:22px;
+      padding:7px;
+      background:transparent;
+      margin:0 0 18px 0;
+    }
+
+    /* Blue multi-ring focus look */
+    .field-wrap:focus-within{
+      box-shadow:
+        0 0 0 3px rgba(24,119,242,.95),
+        0 0 0 6px rgba(24,119,242,.18);
+      border-radius:22px;
+    }
+
+    .field{
+      height:88px;
+      width:100%;
+      border-radius:18px;
+      border:1px solid #d7dbe0;
+      background:var(--field);
+      padding:0 26px;
+      font-size:22px;
+      outline:none;
+      color:var(--text);
+    }
+    .field::placeholder{
+      color:#9aa0a6;
+      font-weight:500;
+    }
+
+    .btn{
+      width:100%;
+      height:78px;
+      border:none;
+      border-radius:44px;
+      background:var(--blue);
+      color:#fff;
+      font-size:24px;
+      font-weight:700;
+      cursor:pointer;
+      margin:8px 0 18px 0;
+    }
+    .btn:active{ transform:translateY(1px); }
+
+    .link{
+      display:block;
+      text-align:center;
+      font-size:22px;
+      font-weight:600;
+      color:var(--text);
+      text-decoration:none;
+      margin:10px 0 22px 0;
+    }
+    .link:hover{ text-decoration:underline; }
+
+    .btn-outline{
+      width:100%;
+      height:76px;
+      border-radius:44px;
+      background:#fff;
+      border:2px solid rgba(24,119,242,.85);
+      color:rgba(24,119,242,.95);
+      font-size:24px;
+      font-weight:700;
+      cursor:pointer;
+      margin:6px 0 26px 0;
+    }
+
+    .meta{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      color:#111;
+      font-weight:600;
+      font-size:22px;
+      opacity:.95;
+      user-select:none;
+    }
+    .meta svg{ display:block; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel" aria-label="Facebook login">
+      <h1 class="title">Log in to Facebook</h1>
+
+      <form>
+        <div class="field-wrap">
+          <input class="field" type="text" inputmode="email"
+                 placeholder="Email address or mobile number" aria-label="Email address or mobile number" autofocus>
+        </div>
+
+        <div class="field-wrap">
+          <input class="field" type="password"
+                 placeholder="Password" aria-label="Password">
+        </div>
+
+        <button class="btn" type="submit">Log in</button>
+
+        <a class="link" href="#" onclick="return false;">Forgotten password?</a>
+
+        <button class="btn-outline" type="button">Create new account</button>
+
+        <div class="meta" aria-label="Meta">
+          <!-- simple Meta “loop” mark -->
+          <svg width="34" height="18" viewBox="0 0 68 36" aria-hidden="true">
+            <path d="M18 30c-6.6 0-12-5.4-12-12S11.4 6 18 6c8.6 0 14.2 11.3 16 14.7C35.8 17.3 41.4 6 50 6c6.6 0 12 5.4 12 12s-5.4 12-12 12c-9.1 0-15.6-12.1-16-12.7C33.6 17.9 27.1 30 18 30Z"
+                  fill="none" stroke="var(--focus)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Meta</span>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
